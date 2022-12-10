@@ -35,6 +35,17 @@ var MessagesView = {
   //RENDERS ONE MESSAGE
   renderMessage: function(message) {
     // TODO: Render a single message.
+    var newMessage;
+
+    for (var i = 0; i < Friends._data.length; i++) {
+      if (Friends._data[i] === message.username) {
+        newMessage = MessageView.renderFriend(message);
+        MessagesView.$chats.append(newMessage);
+        return;
+      }
+    }
+
+
     var newMessage = MessageView.render(message);
     MessagesView.$chats.append(newMessage);
   },
