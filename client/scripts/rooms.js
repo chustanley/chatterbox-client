@@ -67,7 +67,7 @@ var Rooms = {
 
        ALL IN ALL
         - Even if people send messages, causing the data to change -> then the page to refresh, To us it doesnt matter because our selected room and our other functions will only show us that specific room.
-    */
+    // */
   },
 
   markRoomAsSelected: function () { //CALLED ON THE DOM
