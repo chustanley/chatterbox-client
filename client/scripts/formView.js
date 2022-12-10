@@ -3,11 +3,11 @@
 // Apply what you learn here to other interactive views if necessary.
 
 var FormView = {
+  $form: $('form'), //LOCATION ON DOM WHERE YOU SUBMIT MESSAGES
 
-  $form: $('form'),
 
   initialize: function() {
-    FormView.$form.on('submit', FormView.handleSubmit);
+    FormView.$form.on('submit', FormView.handleSubmit); //GIVING THE BUTTON FUNCTIONALITY
   },
 
   handleSubmit: function(event) {
@@ -16,7 +16,16 @@ var FormView = {
 
     // TODO: Currently, this is all handleSubmit does.
     // Make this function actually send a message to the Parse API.
-  
+    var message = {};
+
+    message['username'] = App.username;
+    //.val is used to get the values from 'input, select, textarea' from form elements
+    // getting values from the #message ID on dom which is a input tag with the type text on DOM
+    message['text'] = $('#message').val();
+    message['roomname'] = Rooms.selectedRoom; //Currently Selected Room which is defaulted to 'Lobby'
+    // this sends the object created to the Parse API -> server array
+    Parse.create(message);
+
     console.log('click!');
   },
 

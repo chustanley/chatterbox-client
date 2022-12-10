@@ -27,14 +27,19 @@
       <div class="spinner"><img src="client/images/spiffygif_46x46.gif"></div>
       <div id="rooms">
         Room:
-        <select></select>
+        <select id="selectBox" onchange="Rooms.markRoomAsSelected(), RoomsView.handleChange()"> <!-- this is used to add a drop down list -->
+        </select>
         <button>Add Room</button>
       </div>
+
       <form action="#" id="send" method="post">
+        <!--input creates an empty box to add text w/ the type 'text'-->
         <input type="text" name="message" id="message"/>
+        <!--input creates a button to add text w/ the type 'submit'-->
         <input type="submit" name="submit" class="submit"/>
       </form>
     </div>
+    <!--THIS IS WHERE WE WILL ADD COHORT MESSAGES TO-->
     <div id="chats"></div>
     <script src="client/env/config.js"></script>
     <script src="client/scripts/parse.js"></script>
@@ -47,7 +52,7 @@
     <script src="client/scripts/messagesView.js"></script>
     <script src="client/scripts/app.js"></script>
     <script>
-      $(() => App.initialize());
+      $(() => App.initialize()); // THIS IS THE CALL TO APP INITIALIZE!!
     </script>
   </body>
 </html>
