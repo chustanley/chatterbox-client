@@ -10,7 +10,7 @@ var RoomsView = {
     RoomsView.handleClick();
   },
 
-  //LOADS NEW ROOMS DATA ONTO PAGE
+  //LOADS NEW ROOMS DATA ONTO PAGE //Comment
   render: function() {
     var filteredRooms = Rooms.get(); //GETS INFORMATION FROM ROOMS.UPDATE -> ARRAY THAT ONLY CONTAINS THE NAME OF THE ROOM (FILTERED THROUGH LOOPING)
     RoomsView.$select.empty(); // EMPTIES OUT THE CONTENT IN $SELECT
